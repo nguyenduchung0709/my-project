@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <title>Đăng ký học viên</title>
+    <style>
+        .container {
+            background-color: #ffffcc;
+            width: 100%;
+
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .header {
+            background-color: #ccffcc;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightyellow;
+        }
+
+        table{
+            width: 100%
+
+        }
+
+
+    </style>
 </head>
 <body>
 
+
+<div class="header"> ĐĂNG KÝ HỌC VIÊN
+</div>
+<div class="container">
+
+    <table>
+    <tr>
+        <td><lable for="yourname" >Họ và tên</lable></td>
+        <td><input type="text" id="yourname" style="width:100%;"></td>
+    </tr>
+    <tr>
+        <td><lable for="datebirth">Ngày sinh </lable></td>
+        <td><input type="text" id="datebirth" style="width:35%;"></td>
+    </tr>
+    <tr>
+        <td>Giới tính</td>
+        <td>
+            <input type="radio" name="gioitinh" value="Nam"> Nam
+            <input type="radio" name="gioitinh" value="Nữ"> Nữ
+        </td>
+    </tr>
+    <tr>
+        <td><lable for="address" >Địa chỉ</lable></td>
+        <td><textarea name="" id="address" cols="30" rows="10"></textarea></td>
+    </tr>
+    <tr>
+        <td><lable for="class">Lớp</lable></td>
+        <td><select name="" id="class" value="Chọn lớp">
+            <option id="class" >-Chọn lớp-</option>
+            <option id="class" value="lớp A">Lớp A</option>
+            <option id="class" value="lớp B">Lớp B</option>
+            <option id="class" value="lớp C">Lớp C</option>
+
+        </select>
+
+        </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="email" ></td>
+    </tr>
+    <tr>
+        <td>Điện thoại</td>
+        <td><input type="text"></td>
+    </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit">
+                <input type="reset">
+            </td>
+        </tr>
+</table>
+</div>
 </body>
 </html>
