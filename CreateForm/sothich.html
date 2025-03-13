@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao form don gian</title>
+  <style>
+    p{
+      background-color: orange;
+      color: white;
+    }
+    body{
+      font-family :arial, San-serif,serif ;
+    }
+    .container{
+      width: 400px ;
+      padding: 50px;
+      margin: 20px auto;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 5px 5px 10px #888888;
+    }
+    body {
+      background-color: #dff9fb;
+      font-family: Arial, sans-serif;
+    }
+    .hobby{
+      color:orange;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+<p align="center" >Sở thích của bản thân </p>
+  <form>
+    <table>
+      <tr>
+        <td><label for="name"><span style="color:blue">Họ và tên</span></label></td>
+        <td><input type="text" id="name" name="name" style="width: 100%;"></td>
+      </tr>
+      <tr>
+        <td><label for="email"><span style="color:blue">Email</span></label></td>
+        <td><input type="email" id="email" name="email" style="width: 100%;"></td>
+      </tr>
+      <tr>
+        <td><label><span style="color:blue">Sở thích</span></label></td>
+        <td>
+          <div class="hobby">
+          <input type="checkbox" id="thethao"><label for="thethao"> Thể thao</label>
+          <input type="checkbox" id="amnhac"><label for="amnhac"> Âm nhạc</label>
+          <input type="checkbox" id="docsach"><label for="docsach"> Đọc sách</label><br>
+
+          <input type="checkbox" id="luotweb"><label for="luotweb"> Lướt web</label>
+          <input type="checkbox" id="choigame"><label for="choigame"> Chơi game</label>
+          <input type="checkbox" id="dienanh"><label for="dienanh"> Điện ảnh</label><br>
+
+          <input type="checkbox" id="dulich"><label for="dulich"> Du lịch</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="buttons">
+          <button type="submit">Gửi thông tin</button>
+          <button type="reset">Nhập lại</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
