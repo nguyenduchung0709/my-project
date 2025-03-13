@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bàn Cờ Vua</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: 40px repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px) 40px;
+      border: 10px solid orange;
+      background-color: orange;
+    }
+    .cell {
+      width: 50px;
+      height: 50px;
+    }
+    .black {
+      background-color: black;
+    }
+    .white {
+      background-color: white;
+    }
+    .label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="board">
+  <!-- Hàng cột đánh số -->
+  <div class="label"></div>
+  <div class="label">1</div>
+  <div class="label">2</div>
+  <div class="label">3</div>
+  <div class="label">4</div>
+  <div class="label">5</div>
+  <div class="label">6</div>
+  <div class="label">7</div>
+  <div class="label">8</div>
+
+  <!-- Bàn cờ 8x8 -->
+  <script>
+    const board = document.querySelector('.board');
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+    for (let i = 0; i < 8; i++) {
+      // Cột chữ cái
+      let letterCell = document.createElement('div');
+      letterCell.classList.add('label');
+      letterCell.textContent = letters[i];
+      board.appendChild(letterCell);
+
+      for (let j = 0; j < 8; j++) {
+        let cell = document.createElement('div');
+        cell.classList.add('cell');
+        if ((i + j) % 2 == 0) {
+          cell.classList.add('white');
+        } else {
+          cell.classList.add('black');
+        }
+        board.appendChild(cell);
+      }
+    }
+  </script>
+</div>
+
+</body>
+</html>
