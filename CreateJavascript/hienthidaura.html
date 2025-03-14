@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị đầu ra</title>
+</head>
+<body>
+<button type="button" onclick="showMessage();">Hiển thị bằng Alert  </button>
+<button type="button" id="show" onclick="showMessageByHtmlTag();">Hiển thị bằng thẻ HTML  </button>
+<button type="button" onclick="showMessageByDocumentWrite()">Hiển thị bằng DocumentWrite</button>
+<button type="button" onclick="showMessageByConsoleLog()">Hiển thị bằng Console Log</button>
+<script>
+  function showMessage() {
+    alert('Xin chào');
+  }
+  function showMessageByHtmlTag() {
+    document.getElementById('show').innerHTML='Xin chào';
+  }
+  function showMessageByDocumentWrite() {
+    document.write('Xin chào');
+  }
+  function showMessageByConsoleLog() {
+    console.log('Xin chào');
+  }
+</script>
+</body>
+</html>
