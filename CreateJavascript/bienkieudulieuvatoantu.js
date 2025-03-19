@@ -11,24 +11,29 @@
 // // document.write('<br/>');
 // // document.write(`Điểm trung bình: ${diemTrungBinh}`);
 //
-// // Bài 2
-// let nhietDoC = prompt('Nhập nhiệt độ C:' );
-// let doF = (nhietDoC * 9/5)+32;
-// document.write('<br/>');
-// document.write(`Độ F là: ${doF}
+// Bài 2
+
+// function calculateF() {
+//     let doC= document.getElementById("doC").value || 0;
+//     let doF = (doC * 9 / 5) + 32;
 //
-// // Bài 3
-// // let pi = Math.PI;
-// // let r= parseFloat(prompt('Nhập bán kính của hình tròn'));
-// // let S= pi   * r*r;
-// // document.write(`Diện tích hình tròn là: ${S}`);
+//     document.getElementById("result").innerHTML = 'Độ F bằng '+doF;
+//     // document.write('Độ F bằng' + doF)
+// }
+
+
+// Bài 3
+// let pi = Math.PI;
+// let r= parseFloat(prompt('Nhập bán kính của hình tròn'));
+// let S= pi   * r*r;
+// document.write(`Diện tích hình tròn là: ${S}`);
 //
-// // Bài 4
-// //
-// // let pi = Math.PI;
-// // let r= parseFloat(prompt('Nhập bán kính của hình tròn'));
-// // let C= 2*pi   * r;
-// // document.write(`Chu vi hình tròn là: ${C}`);
+// Bài 4
 //
-//
-//
+// let pi = Math.PI;
+// let r= parseFloat(prompt('Nhập bán kính của hình tròn'));
+// let C= 2*pi   * r;
+// document.write(`Chu vi hình tròn là: ${C}`);
+
+
+
