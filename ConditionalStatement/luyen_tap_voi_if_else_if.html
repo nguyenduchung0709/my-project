@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập với cấu trúc If-else-if</title>
+</head>
+<body>
+<script>
+  let name = prompt('Nhập tên của bạn')
+  if (name == 'Admin') {
+    let password = prompt('Nhập mật khảua của bạn')
+    if (password == 'TheMaster') {
+      alert('Welcome')
+    }
+    else if (password == "") {
+      alert('Canceled')
+      }
+    else {
+      alert('I dont know you')
+    }
+  }
+  else if (name == ""){
+    alert('Canceled')
+  } else {
+    alert('I dont know you')
+  }
+</script>
+</body>
+</html>
