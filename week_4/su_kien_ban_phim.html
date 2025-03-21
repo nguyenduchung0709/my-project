@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện chuột</title>
+  <style>
+    body {
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+<img id="img" src="ball.png" alt="ball">
+<h3>Click me to move </h3>
+<button id="move" onclick="moveRight()">Click me</button>
+<script>
+  let img0 = document.getElementById("img");
+  function init(){
+      img0 = document.getElementById("img");
+      img0.style.position= "relative";
+      img.style.left='0px'
+  }
+  function moveRight(){
+      img0.style.left = parseInt(img0.style.left) + 10 + 'px'
+  }
+  window.onload = init
+</script>
+</body>
+</html>
