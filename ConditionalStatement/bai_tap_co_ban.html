@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập cơ bản về biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<h1>Thông tin cá nhân</h1>
+<script>
+  // Bài 1: Thông tin cá nhân
+  let name, age, weight ;
+  name  = 'Hưng';
+  age  = '18';
+  weight  = '67';
+  document.write('Tên :' + name );
+  document.write('</br>')
+  document.write('Tuổi :' + age);
+  document.write('</br>')
+  document.write('Cân nặng : ' + weight);
+  document.write('<hr>')
+// Bài 2 : Tính tổng số tuổi
+  let myAge , friendAge;
+   myAge = 18;
+   friendAge = 18;
+   sum = myAge + friendAge;
+   document.write('Tổng số tuổi của tôi và bạn tôi là:' + " " + sum);
+   document.write('<hr>')
+// Bài 3: Kiểm tra số chẵn hay lẻ
+  let num= parseInt(prompt('Nhập số từ bàn phím'));
+  if (num % 2 == 0 ) {
+    document.write(num + " " + 'là số chẵn');
+  }
+  else {
+    document.write(num + " " + 'là số lẻ');
+  }
+</script>
+</body>
+</html>
