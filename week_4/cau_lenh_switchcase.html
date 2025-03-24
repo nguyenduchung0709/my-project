@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu lệnh Switch Case</title>
+  <style>
+
+      input {
+        padding: 10px; /* Tăng kích thước bên trong */
+        width: 200px;
+    }
+  </style>
+</head>
+<body>
+<h1>Kiểm tra số ngày trong tháng </h1>
+
+<input type="number" id="month" placeholder="Nhập tháng" min="1" max="12">
+
+<button onclick="test()">Check</button>
+<p id="result"></p>
+<script>
+  function test() {
+    let x = parseInt(document.getElementById("month").value);
+    let days;
+    switch (x) {
+      case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        days = 31;
+        break;
+
+      case 4: case 6: case 9: case 11:
+        days: 30;
+        break;
+      case 2:
+        days= 28;
+        break;
+
+      default:
+          document.getElementById("result").innerHTML = ('Tháng không hợp lê');
+          return
+
+    }
+    document.getElementById("result").innerText = 'Tháng có ngày là ' + days ;
+  }
+
+</script>
+</body>
+</html>
