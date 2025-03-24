@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me </title>
+</head>
+<h2>Do you love me</h2>
+<button onclick="yes()" >Yes</button>
+<button id=no>No</button>
+<script>
+  function yes(){
+    alert('<3')
+  }
+
+    let deny = document.getElementById('no');
+    deny.addEventListener('mouseover', () => {
+      let maxWidth = window.innerWidth - deny.clientWidth;
+      let maxHeight = window.innerHeight - deny.clientHeight;
+
+      let randomX = Math.floor(Math.random() * maxWidth);
+      let randomY = Math.floor(Math.random() * maxHeight);
+      deny.style.position ='relative';
+      deny.style.left = randomX +'px';
+      deny.style.top = randomY + 'px';
+
+  });
+</script>
+<body>
+
+</body>
+</html>

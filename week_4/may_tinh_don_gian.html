@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản </title>
+  <style>
+    .container {
+
+      border: 4px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <form>
+  <input type="text" id="showDisplay" placeholder="0"><br>
+  <button onclick="showDisplay()" value="1">1</button>
+  <button onclick="showDisplay()" value="2">2</button>
+  <button onclick="showDisplay()" value="3">3</button>
+  <button onclick="showDisplay()" value="4">4</button>
+    <br>
+  <button onclick="showDisplay(operation)" value="*">x</button>
+
+  <button onclick="showDisplay()" value="5">5</button>
+  <button onclick="showDisplay()" value="6">6</button>
+  <button onclick="showDisplay()" value="7">7</button><br>
+  <button onclick="showDisplay()" value="8">8</button>
+
+    <button onclick="showDisplay(operation)" value="/">/</button>
+
+  <button onclick="showDisplay()" value="9">9</button>
+  <button onclick="showDisplay()" value="C">C</button><br>
+    <button onclick="showDisplay()" value="=">=</button>
+
+    <button onclick="showDisplay()" value="0">0</button>
+    <button onclick="showDisplay(operation)" value="-">-</button>
+    <button onclick="showDisplay(operation)" value="+">+</button>
+    <br>
+  </form>
+</div>
+<script>
+  function showDisplay() {
+    let so1 = parseInt(document.getElementById("showDisplay").value);
+
+  }
+</script>
+</body>
+</html>
