@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Do you love me </title>
 </head>
+
 <h2>Do you love me</h2>
 <button onclick="yes()" >Yes</button>
 <button id=no>No</button>
@@ -13,7 +14,7 @@
   }
 
     let deny = document.getElementById('no');
-    deny.addEventListener('mouseover', () => {
+    deny.addEventListener('click', () => {
       let maxWidth = window.innerWidth - deny.clientWidth;
       let maxHeight = window.innerHeight - deny.clientHeight;
 

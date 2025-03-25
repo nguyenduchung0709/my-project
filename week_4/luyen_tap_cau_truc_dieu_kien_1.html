@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập luyện tập cấu trúc điều kiện 1 </title>
+</head>
+<body>
+<script>
+  // // Bài 1: Kiểm tra a có chia hết cho b ?
+  //   let a = parseFloat(prompt('Nhập số a'));
+  //   let b = parseFloat(prompt('Nhập số b'));
+  //   if (a % b === 0) {
+  //       document.write('Số' + ' ' + a + ' ' + 'chia hết cho số' + ' ' + b)
+  //   } else if (isNaN(a)) {
+  //       alert('Vui lòng nhập số a')
+  //
+  //   } else if (isNaN(b)){
+  //     alert('Vui lòng nhập số b')
+  //   } else if (b===0){
+  //     alert('Math Error')
+  //   } else {
+  //     document.write('Số' + ' ' + a + ' ' + 'không chia hết cho số' + ' ' + b)
+  //   }
+    // Bài 2: Nhập tuổi kiểm tra xem có được học lớp 10 không
+    // let age = parseInt(prompt('Nhập tuổi của bạn'))
+    // if (isNaN(age)){
+    //   alert('Vui lòng nhập tuổi của bạn')
+    // } else if (age < 15){
+    //   document.write('Bạn chưa đủ tuổi học lớp 10')
+    // } else {
+    //   document.write('Bạn đã đủ tuổi để học lớp 10')
+    // }
+ // Bài 3: Nhập một số nguyên bất kỳ, in ra kết quả để xác định số đó lớn hơn, nhỏ hơn hay bằng 0.
+ //    let n= parseInt(prompt('Nhập một số bất kỳ'))
+ //  if (isNaN(n)){
+ //    alert('Vui lòng nhập một số')
+ //  } if (n < 0){
+ //    document.write('Số' + ' ' + n + ' ' + 'nhỏ hơn' + ' ' + '0')
+ //  } else if (n === 0){
+ //    document.write('Số' + ' ' + n + ' ' + 'bằng' + ' ' + '0')
+ //  } else {
+ //    document.write('Số' + ' ' + n + ' ' +  'lớn hơn' + ' ' + 0)
+ //  }
+  // Bài 4: Nhập 3 số nguyên, tìm và in ra giá trị lớn nhất trong ba số đó.
+  // function findMaxNumber(x, y, z) {
+  // let max = x;
+  // if (y > max){
+  //   max = y;
+  // }
+  // if (z > max){
+  //   max = z;
+  // }
+  //  return max;
+  // }
+  // let x, y, z;
+  // x=parseInt(prompt('Nhập số thứ nhất'))
+  // y=parseInt(prompt('Nhập số thứ hai'))
+  // z=parseInt(prompt('Nhập số thứ ba'))
+  // let maxNumber = findMaxNumber(x, y, z);
+  // document.write('Số lớn nhất trong 3 số là :' + maxNumber);
+  // Bài 5:
+
+
+  // function check() {
+  //     let diemKT = parseFloat(prompt('Nhập điểm kiểm tra của bạn:'));
+  //     if (isNaN(diemKT) || diemKT < 0 || diemKT > 10) {
+  //         alert('Điểm không hợp lệ')
+  //         return;
+  //
+  //     }
+  //     let diemGK = parseFloat(prompt('Nhập điểm kiểm tra giữa kỳ của bạn:'));
+  //     if (isNaN(diemGK) || diemGK < 0 || diemGK > 10) {
+  //     alert('Điểm không hợp lệ')
+  //         return;
+  //       }
+  //
+  //     let diemCK = parseFloat(prompt('Nhập điểm kiểm tra cuối kỳ:'));
+  //     if (isNaN(diemCK) || diemCK < 0 || diemCK > 10)  {
+  //         alert('Điểm không hợp lệ')
+  //         return;
+  //     }
+  //     let diemTB = (diemKT*0.3)+(diemGK*0.3)+(diemCK*0.4)
+  //     let xepLoai;
+  //     if (diemTB >= 8.5) {
+  //         xepLoai = "học lực Giỏi";
+  //     } else if (7.0 < diemTB <= 8.5) {
+  //         xepLoai = "học lực Khá";
+  //     } else if (5.0 < diemTB <= 7.0) {
+  //         xepLoai = "học lực Trung bình"
+  //     } else {
+  //         xepLoai = "học lực Yếu"
+  //     }
+  //     alert ('Xếp loại' + ' ' + xepLoai);
+  // }
+  // check();
+  // Bài 6: Tính hoa hồng nhận được dựa trên mức doanh số bán hàng.
+//   function checked() {
+//       let sale = parseFloat(prompt('Nhập doanh số bán hàng (VND)'))
+//       if (isNaN(sale) || sale < 0 ){
+//           alert('Dữ liệu không phù hợp')
+//           return;
+//       }
+//       let tyLe;
+//       if (sale <= 5000000) {
+//           tyLe = 0.03 ;
+//       } else if (5000000 < sale <= 10000000 ){
+//           tyLe = 0.05 ;
+//       } else if (10000000 < sale <= 20000000 ){
+//           tyLe = 0.07 ;
+//       } else {
+//           tyLe = 0.1 ;
+//       }
+//       let hoaHong = sale * tyLe;
+//       alert('Doanh số bằng' + ' ' + sale + 'VND' + '\n' + 'Hoa Hồng bằng' + ' ' + hoaHong + 'VND');
+//   }
+// checked();
+  // Bài 7:
+  function cuocThueBao() {
+      let phut = parseInt(prompt("Nhập số phút gọi trong tháng:"));
+
+      // Kiểm tra giá trị nhập vào
+      if (isNaN(phut) || phut < 0) {
+          alert("Vui lòng nhập số phút hợp lệ!");
+          return;
+      }
+
+      let soTien = 25000;
+      let tongPhi = soTien;
+
+      if (phut <= 50) {
+          tongPhi += phut * 600;
+      } else if (phut <= 150) {
+          tongPhi += (50 * 600) + ((tongPhi - 50) * 400);
+      } else {
+          tongPhi += (50 * 600) + (100 * 400) + ((phut - 150) * 200);
+      }
+
+      alert(
+          'Số phút gọi:' + phut + '\n' + ' ' + 'Cước thuê bao:' + soTien + '\n' `Tổng tiền cước:` + tongPhi)
+
+  }
+cuocThueBao();
+</script>
+</body>
+</html>
