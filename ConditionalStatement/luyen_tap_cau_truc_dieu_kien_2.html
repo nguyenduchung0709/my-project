@@ -7,125 +7,133 @@
 <body>
 <script>
     // Bài 1: Chuyển độ C sang độ F
-    // let doC = parseInt(prompt('Nhập vào nhiệt độ C'));
-    // doF = doC * 9/5 +32;
-    // document.write('Độ F từ nhiệt độ C bằng :' + ' ' + doF);
-    // Bài 2: Chuyển từ m sang feet
-    // let meter= parseFloat(prompt('Nhập vào độ dài (m)'));
-    // feet = meter * 3.2808;
-    // document.write('Độ dài từ mét chuyển sang feet bằng:' + ' ' + feet);
-    // Bài 3: Tính diện tích hình vuông khi biết cạnh a
-    // let canhA = parseFloat(prompt('Nhập vào độ dài cạnh a của hình vuông:'))
-    // dienTich = canhA ** 2
-    // document.write('Diện tích hình vuông bằng:' + ' ' + dienTich );
+    let doC = parseInt(prompt('Nhập vào nhiệt độ C'));
+    doF = doC * 9 / 5 + 32;
+    document.write('Độ F từ nhiệt độ C bằng :' + ' ' + doF);
+    //  Bài 2: Chuyển từ m sang feet
+    let meter = parseFloat(prompt('Nhập vào độ dài (m)'));
+    feet = meter * 3.2808;
+    document.write('Độ dài từ mét chuyển sang feet bằng:' + ' ' + feet);
+    //   Bài 3: Tính diện tích hình vuông khi biết cạnh a
+    let canhA = parseFloat(prompt('Nhập vào độ dài cạnh a của hình vuông:'))
+    dienTich = canhA ** 2
+    document.write('Diện tích hình vuông bằng:' + ' ' + dienTich);
     // Bài 4: Tính diện tích hình chữ nhật sau khi biết 2 cạnh a và b
-    // let a = parseFloat(prompt('Nhập vào cạnh thứ nhất'));
-    // let b = parseFloat(prompt('Nhập vào cạnh thứ hai'));
-    // dienTichHCN = a*b;
-    // document.write('Diện tích hình chữ nhật với cạnh bằng'+ ' ' + a + ' ' + ' và' + ' ' + 'cạnh bằng' + ' '+ b+ ' '+ 'bằng'+ ' ' + dienTichHCN)
-    // Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
-    // let a = parseInt(prompt('Nhập vào cạnh thứ nhất của hình tam giác'))
-    // let b = parseInt(prompt('Nhập vào canh thứ hai của hình tam giác'));
-    // dienTichTamGiac = 1/2 * a * b;
-    // document.write('Diện tích của hình tam giác bằng:'+ ' ' + dienTichTamGiac);
-    // Bài 6: Giải phương trình bậc 1
-    //   function check(){
-    //     let a = parseFloat(prompt('Nhập vào số a'))
-    //     if (isNaN(a) || a === 0 || a === null) {
-    //       alert('Đây không phải phương trình bậc nhất, nhập lại với a khác 0!')
-    //       return;
-    //     }
-    //     let b = parseFloat(prompt('Nhập vào số b'))
-    //     let x;
-    //     x = -b/a;
-    //     document.write('Nghiệm của phương trình bằng:' + ' ' + x)
-    //   }
-    // check();
+    let a = parseFloat(prompt('Nhập vào cạnh thứ nhất'));
+    let b = parseFloat(prompt('Nhập vào cạnh thứ hai'));
+    dienTichHCN = a * b;
+    document.write('Diện tích hình chữ nhật với cạnh bằng' + ' ' + a + ' ' + ' và' + ' ' + 'cạnh bằng' + ' ' + b + ' ' + 'bằng' + ' ' + dienTichHCN)
+    //Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+    let a = parseInt(prompt('Nhập vào cạnh thứ nhất của hình tam giác'))
+    let b = parseInt(prompt('Nhập vào canh thứ hai của hình tam giác'));
+    dienTichTamGiac = 1 / 2 * a * b;
+    document.write('Diện tích của hình tam giác bằng:' + ' ' + dienTichTamGiac);
+
+    //  Bài 6: Giải phương trình bậc 1
+    function check() {
+        let a = parseFloat(prompt('Nhập vào số a'))
+        if (isNaN(a) || a === 0 || a === null) {
+            alert('Đây không phải phương trình bậc nhất, nhập lại với a khác 0!')
+            return;
+        }
+        let b = parseFloat(prompt('Nhập vào số b'))
+        let x;
+        x = -b / a;
+        document.write('Nghiệm của phương trình bằng:' + ' ' + x)
+    }
+
+    check();
+
     // Bài 7: Giải phương trình bậc 2
-    // function check() {
-    //     let a = parseFloat(prompt('Nhập vào hệ số bậc 2'))
-    //     if (isNaN(a) || a === 0) {
-    //         alert('Không phải phương trình bậc 2, nhập lại với a khác 0')
-    //         return;
-    //     }
-    //     let b = parseFloat(prompt('Nhập vào hệ số bậc 1'))
-    //     let c = parseFloat(prompt('Nhập vào hệ số tự do'))
-    //     let delta = b * b - 4 * a * c;
-    //     if (delta < 0) {
-    //         document.write('Phương trình vô nghiệm')
-    //     } else if (delta === 0) {
-    //         document.write('Phương trình có nghiệm kép bằng' + ' ' + -b / 2 * a)
-    //     } else {
-    //     let x1 = ((-b) - Math.sqrt(delta)) / 2 * a;
-    //     let x2 = ((-b) + Math.sqrt(delta)) / 2 * a;
-    //         document.write('Phương trình có 2 nghiệm là x1 =' + ' ' + x1 + ' ' + ' và' + ' ' + 'x2 =' + ' ' + x2)
-    //     }
-    // }
-    //
-    // check();
-    // Bài 8:Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
-    // let age = parseInt(prompt('Nhập vào tuổi '))
-    // if (0 > age || age > 120 || isNaN(age)) {
-    //     alert(age + ' ' + 'không phải tuổi của một người')
-    // } else {
-    //     alert(age + ' ' + 'đây là tuổi của một người')
-    // }
-    // Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác
-//     function check(){
-//     let a, b, c;
-//     a= parseFloat(prompt('Nhập vào một cạnh của tam giác'))
-//     b= parseFloat(prompt('Nhập vào một cạnh của tam giác'))
-//     c= parseFloat(prompt('Nhập vào một cạnh của tam giác'))
-//     if (a <= 0 || b <= 0 || c <= 0  ){
-//         alert('Nhập lại để a, b, c đều lớn hơn 0')
-//         return;
-//     } if (a + b > c && a + c > b && b + c> a){
-//         alert('Đây là 3 cạnh của một tam giác')
-//         }
-//
-//     }
-// check();
-    // Bài 10:  Viết chương trình tính giá điện.
-//     function tinhGiaDien() {
-//         let soDien = parseInt(prompt('Nhập vào số điện (kWh)'))
-//         let tongTien;
-//         if (soDien <= 50) {
-//             tongTien = soDien * 1678;
-//         } else if (soDien <= 100) {
-//             tongTien = 50 * 1678 + (soDien - 50) * 1734;
-//         } else if (soDien <= 200) {
-//             tongTien = 50 * 1678 + 50 * 1734 + (soDien - 100) * 2014;
-//         } else if (soDien <= 300) {
-//             tongTien = 50 * 1678 + 50 * 1734 + 100 * 2014 + (soDien - 200) * 2536;
-//         } else if (soDien <= 400) {
-//             tongTien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (soDien - 300) * 2834;
-//         } else {
-//             tongTien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (soDien - 400) * 2927;
-//         }
-//
-//         return tongTien;
-//     }
-// tinhGiaDien();
-    // Bài 11: Viết chương trình tính thuế thu nhập cá nhân
-    // let thuNhap = parseInt(prompt('Nhập vào thu nhập (VND) '));
-    // let soThue;
-    // if (thuNhap <= 5000000){
-    //     soThue = thuNhap * 0.05
-    // } else if (5000000 < thuNhap <= 10000000){
-    //     soThue = thuNhap * 0.1
-    // } else if (10000000 < thuNhap <= 18000000){
-    //     soThue = thuNhap * 0.15
-    // } else if (18000000 < thuNhap <= 32000000){
-    //     soThue = thuNhap * 0.2
-    // } else if (32000000 < thuNhap <= 52000000){
-    //     soThue = thuNhap * 0.25
-    // } else if (52000000 < thuNhap <= 80000000){
-    //     soThue = thuNhap * 0.3
-    // } else {
-    //     soThue = thuNhap * 0.35
-    // }
-    // alert('Số thuế bạn phải đóng dựa trên thu nhập bằng: ' + soThue +'VND')
-    // Bài 12:
+    function check() {
+        let a = parseFloat(prompt('Nhập vào hệ số bậc 2'))
+        if (isNaN(a) || a === 0) {
+            alert('Không phải phương trình bậc 2, nhập lại với a khác 0')
+            return;
+        }
+        let b = parseFloat(prompt('Nhập vào hệ số bậc 1'))
+        let c = parseFloat(prompt('Nhập vào hệ số tự do'))
+        let delta = b * b - 4 * a * c;
+        if (delta < 0) {
+            document.write('Phương trình vô nghiệm')
+        } else if (delta === 0) {
+            document.write('Phương trình có nghiệm kép bằng' + ' ' + -b / 2 * a)
+        } else {
+            let x1 = ((-b) - Math.sqrt(delta)) / 2 * a;
+            let x2 = ((-b) + Math.sqrt(delta)) / 2 * a;
+            document.write('Phương trình có 2 nghiệm là x1 =' + ' ' + x1 + ' ' + ' và' + ' ' + 'x2 =' + ' ' + x2)
+        }
+    }
+
+    check();
+    //  Bài 8:Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+    let age = parseInt(prompt('Nhập vào tuổi '))
+    if (0 > age || age > 120 || isNaN(age)) {
+        alert(age + ' ' + 'không phải tuổi của một người')
+    } else {
+        alert(age + ' ' + 'đây là tuổi của một người')
+    }
+
+    //  Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác
+    function check() {
+        let a, b, c;
+        a = parseFloat(prompt('Nhập vào một cạnh của tam giác'))
+        b = parseFloat(prompt('Nhập vào một cạnh của tam giác'))
+        c = parseFloat(prompt('Nhập vào một cạnh của tam giác'))
+        if (a <= 0 || b <= 0 || c <= 0) {
+            alert('Nhập lại để a, b, c đều lớn hơn 0')
+            return;
+        }
+        if (a + b > c && a + c > b && b + c > a) {
+            alert('Đây là 3 cạnh của một tam giác')
+        }
+
+    }
+
+    check();
+
+    //  Bài 10:  Viết chương trình tính giá điện.
+    function tinhGiaDien() {
+        let soDien = parseInt(prompt('Nhập vào số điện (kWh)'))
+        let tongTien;
+        if (soDien <= 50) {
+            tongTien = soDien * 1678;
+        } else if (soDien <= 100) {
+            tongTien = 50 * 1678 + (soDien - 50) * 1734;
+        } else if (soDien <= 200) {
+            tongTien = 50 * 1678 + 50 * 1734 + (soDien - 100) * 2014;
+        } else if (soDien <= 300) {
+            tongTien = 50 * 1678 + 50 * 1734 + 100 * 2014 + (soDien - 200) * 2536;
+        } else if (soDien <= 400) {
+            tongTien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (soDien - 300) * 2834;
+        } else {
+            tongTien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (soDien - 400) * 2927;
+        }
+
+        return tongTien;
+    }
+
+    tinhGiaDien();
+    //   Bài 11: Viết chương trình tính thuế thu nhập cá nhân
+    let thuNhap = parseInt(prompt('Nhập vào thu nhập (VND) '));
+    let soThue;
+    if (thuNhap <= 5000000) {
+        soThue = thuNhap * 0.05
+    } else if (5000000 < thuNhap <= 10000000) {
+        soThue = thuNhap * 0.1
+    } else if (10000000 < thuNhap <= 18000000) {
+        soThue = thuNhap * 0.15
+    } else if (18000000 < thuNhap <= 32000000) {
+        soThue = thuNhap * 0.2
+    } else if (32000000 < thuNhap <= 52000000) {
+        soThue = thuNhap * 0.25
+    } else if (52000000 < thuNhap <= 80000000) {
+        soThue = thuNhap * 0.3
+    } else {
+        soThue = thuNhap * 0.35
+    }
+    alert('Số thuế bạn phải đóng dựa trên thu nhập bằng: ' + soThue + 'VND')
+    //   Bài 12:
     let tienGoc = parseInt(prompt('Nhập vào số tiền gốc của bạn (VND)'))
     let laiSuat = parseFloat(prompt('Nhập vào lãi suất vay (%)'))
     let thoiGianVay = parseInt(prompt('Nhập vào thời gian vay (Tháng)'))
