@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In bảng cửu chương</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<script>
+
+    let scout = '<table border = "1" cellspacing="0" cellpadding="5"  >';
+    for (i=1; i<=10;i++){
+        scout += '<tr>';
+        for (j=1; j<=9; j++){
+            scout += `<td> ${i} x ${j} = ${i*j} </td>`;
+        }
+        scout += '</tr>';
+    }
+    scout += '</table>';
+    document.write(scout);
+
+</script>
+</body>
+</html>
