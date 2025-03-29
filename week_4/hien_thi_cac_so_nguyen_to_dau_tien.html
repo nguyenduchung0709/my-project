@@ -7,10 +7,23 @@
 <body>
 <script>
     let numbers = parseInt(prompt('Nhập n số nguyên tố đầu tiên'))
-    let count=0;
-    for (n=2;n<=numbers;n++) {
+    let count = 0;
+    let N = 2;
+        while (count < numbers){
+            let soNT = true;
+            for (let i = 2 ; i <= Math.sqrt(N);i++ ){
+                if (N % i === 0){
+                    soNT = false;
+                    break;
+                }
+            }
+            if (soNT){
+                document.write(N + '<br>');
+                count++
+            }
+            N++;
+        }
 
-    }
 </script>
 </body>
 </html>
