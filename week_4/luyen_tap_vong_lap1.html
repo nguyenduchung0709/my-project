@@ -5,6 +5,7 @@
     <title>Luyện tập vòng lặp 1</title>
 </head>
 <body>
+<button id="click">Chơi</button>
 <script>
   // Bài 1:Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
   // for (i = 1; i <= 100; i++ ) {
@@ -53,7 +54,66 @@
   //   a = b;
   //   b = temp;
   // }
-  // Bài 5:
+  // Bài 5:  Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+//   let count = 0;
+//   let a = 0, b = 1, temp;
+//   document.write("20 số Fibonacci đầu tiên:" + '<br>');
+//   for (let i = 0; i <=20; i++) {
+//
+//       count += a;
+//       document.write(a + '<br>')
+//       temp = a + b;
+//       a = b;
+//       b = temp;
+//   }
+// document.write('Tổng của 20 số hạng đầu tiên trong dãy Fibonacci bằng:' + ' ' + count);
+  // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+  // let count = 0;
+  // let number = 30;
+  // let N =7;
+  // let sum30 = 0;
+  // for (i = 7; count < number;i++){
+  //     if (N % i === 0){
+  //         document.write(N + '<br>')
+  //         sum30 += N
+  //         count++;
+  //         N+=7;
+  //
+  //     }
+  // }
+  //     document.write('Tổng 30 số chia hết cho 7 đầu tiên bằng' + ' ' + sum30)
+  // Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+  // for (i = 1; i <= 100; i++ ) {
+  //     if (i % 3 === 0 && i % 5 === 0) {
+  //         document.write('FizzBuzz' +'<br>')
+  //     } else if (i % 5 === 0){
+  //         document.write('Buzz' +'<br>')
+  //     } else if (i % 3 ===0) {
+  //         document.write('Fizz' + '<br>')
+  //     } else {
+  //         document.write(i + '<br>')
+  //     }
+  //
+  // }
+  // Bài 8:
+    let test = document.getElementById("click");
+    test.addEventListener("click", function () {
+        let number = parseInt(prompt('Số bạn đoán lớn nhất là bao nhiêu'))
+        let min = 1, max = number;
+        let randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+        document.write(randomInt)
+        let guess = parseInt(prompt('Nhập số bạn đoán'));
+        while (randomInt !== guess) {
+            if (randomInt > guess) {
+                alert('Số bạn nhập đang lớn hơn ')
+            } else if (randomInt < guess) {
+                alert('Số bạn đang lớn hơn')
+            }
+            if (randomInt === guess) {
+                alert('Số bạn nhập chính xác')
+            }
+        }
+    });
 
 
 
