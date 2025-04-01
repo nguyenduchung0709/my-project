@@ -6,32 +6,106 @@
 </head>
 <body>
 <script>
-    // Bài 1: In dãy Fibonacci
-    // let number = parseInt(prompt('Bao nhiêu số Fibonacci'));
-    // let a = 0;
-    // let b =1;
-    // let temp;
-    // for (i=1; i < number; i++) {
-    //     document.write(a + '<br>');
-    //     temp = a + b;
-    //     a=b;
-    //     b=temp;
-    // }
-    // Bài 2:
-    // function tinhGiaithua(num) {
-    //     if (num === 0 || num === 1) {
-    //         return 1;
-    //     }
-    //     return num * tinhGiaithua(num - 1);
-    // }
-    // let num = parseInt(prompt('Nhập vào một số để tính giai thừa'))
-    // document.write(tinhGiaithua(num))
-    // Bài 3:
-    for (let i = 1; i <= 1 ;i++) {
-        for (let j = 1; j <= 2; j++) {
-            document.write('* <br>')
-        }
+    //Bài 1: In dãy Fibonacci
+    let number = parseInt(prompt('Bao nhiêu số Fibonacci'));
+    let a = 0;
+    let b =1;
+    let temp;
+    for (i=1; i < number; i++) {
+        document.write(a + '<br>');
+        temp = a + b;
+        a=b;
+        b=temp;
     }
+    //Bài 2:
+    function tinhGiaithua(num) {
+        if (num === 0 || num === 1) {
+            return 1;
+        }
+        return num * tinhGiaithua(num - 1);
+    }
+    let num = parseInt(prompt('Nhập vào một số để tính giai thừa'))
+    document.write(tinhGiaithua(num))
+    //Bài 3:Góc vuông phía dưới bên trái
+    let rows = 5;
+    let output = "";
+
+    for (let i = 1; i <= rows; i++) {
+        for (let j = 1; j <= i; j++) {
+            output += "* ";
+        }
+        output += "\n";
+    }
+    console.log(output);
+    // Góc vuông phía dưới bên phải
+    let rows = 5;
+    let output = "";
+
+    for (let i = 1; i <= rows; i++) {
+        output += " ".repeat((rows - i) * 2); // Thêm khoảng trắng
+        output += "* ".repeat(i) + "\n";
+    }
+
+    console.log(output);
+    // Góc vuông phía trên bên trái
+    let rows = 5;
+    let output = "";
+
+    for (let i = rows; i >= 1; i--) {
+        output += "* ".repeat(i) + "\n";
+    }
+
+    console.log(output);
+    // Góc vuông phía trên bên phải
+    let rows = 5;
+    let output = "";
+
+    for (let i = rows; i >= 1; i--) {
+        output += " ".repeat((rows - i) * 2); // Thêm khoảng trắng
+        output += "* ".repeat(i) + "\n";
+    }
+
+    console.log(output);
+    // Bài 4:
+    let width = 20;
+    let height = 8;
+    let output = "";
+
+    for (let i = 0; i < height; i++) {
+        for (let j = 0; j < width; j++) {
+
+            if (i === 0 || i === height - 1 || j === 0 || j === width - 1) {
+                output += "* ";
+            } else {
+                output += "  ";
+            }
+        }
+        output += "\n";
+    }
+
+    console.log(output);
+    // Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+    let tienGoc = parseInt(prompt('Nhập vào số tiền gốc của bạn (VND)'))
+    let laiSuat = parseFloat(prompt('Nhập vào lãi suất vay (%)'))
+    let thoiGianVay = parseInt(prompt('Nhập vào thời gian vay (Tháng)'))
+    let laiHangThang = tienGoc * (laiSuat/100) / thoiGianVay;
+    document.write('Số tiền lãi hàng tháng bằng:' + ' ' + laiHangThang)
+    // Bài 6: In hình trái tim
+    const heart = [
+        "   *     *   ",
+        " *   * *   * ",
+        "*     *     *",
+        " *         * ",
+        "   *     *   ",
+        "     * *     ",
+        "      *      "
+    ];
+
+    // In hình trái tim ra console
+    heart.forEach(line => console.log(line));
+
+
+
 </script>
 </body>
 </html>
