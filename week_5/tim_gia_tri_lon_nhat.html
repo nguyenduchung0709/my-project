@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+<script>
+  let x = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+  let max = x[0];
+  let index =0;
+  for (let i=0;i<x.length;i++) {
+    if (x[i] > max) {
+      max = x[i];
+      index = i;
+    }
+  }
+  alert(`Số lớn nhất trong mảng là ${index} ở vị trí ${max}`)
+</script>
+</body>
+</html>
