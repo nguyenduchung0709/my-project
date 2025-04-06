@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good Fast Cheap</title>
+</head>
+<body>
+<div><button onclick="changeGood()" id="btnGood">Good</button></div>
+<div><button onclick="changeFast()" id="btnFast">Fast</button></div>
+<div><button onclick="changeCheap()" id="btnCheap">Cheap</button></div>
+<script>
+    let isGood, isFast, isCheap =false;
+    function changeCheap(){
+        isGood = !isGood;
+    if (isGood && isFast) {
+        isCheap = false;
+        }
+    check()
+    }
+    function changeGood(){
+        isCheap = !isCheap;
+        if (isFast&& isCheap) {
+            isGood = false;
+        }
+        check()
+    }
+    function changeFast(){
+        isFast = !isFast;
+        if (isGood && isCheap) {
+            isFast = false;
+        }
+        check()
+    }
+    function check(){
+        let btn1 = document.getElementById("btnGood");
+        let btn2 = document.getElementById("btnFast");
+        let btn3 = document.getElementById("btnCheap");
+        if (isGood) {
+            btn1.style.color = "green";
+        } else {
+            btn1.style.color = "red";
+        }
+        if (isFast) {
+            btn2.style.color = "green";
+        } else {
+            btn2.style.color = "red";
+        }
+        if (isCheap) {
+            btn3.style.color = "green";
+        } else {
+            btn3.style.color = "red";
+        }
+    }
+
+</script>
+</body>
+</html>

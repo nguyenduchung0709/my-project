@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các hàm có sẵn trong mảng</title>
+</head>
+<body>
+<script>
+    // Bài 1: Nối chuỗi trong mảng
+    let myColor = ["Red", "Blue", "Black", "Gray"]
+    document.write(myColor.join())
+    document.write("<hr>");
+    // Bài 2: Chèn dấu "-" giữa các số chẵn
+    let numbers = "025468";
+    let tachChuoi = numbers.split('');
+    let result = [];
+    for (let i = 0; i < tachChuoi.length; i++) {
+        result.push(tachChuoi[i]);
+        if (tachChuoi[i]% 2  === 0 && tachChuoi[i+1] % 2 === 0) {
+            result.push("-")
+        }
+    }
+    document.write(result.join(' '));
+    document.write("<hr>");
+    // Bài 3: Chuyển chữ hoa thành chữ thường và ngược lại
+    let input = 'The Quick Brown Fox'
+    let toggle = ""
+    for (let i = 0; i < input.length; i++) {
+        let c = input[i];
+        if (c === c.toUpperCase()) {
+            toggle += c.toLowerCase();
+        } else {
+            toggle += c.toUpperCase();
+        }
+    }
+    document.write(toggle)
+
+</script>
+</body>
+</html>
