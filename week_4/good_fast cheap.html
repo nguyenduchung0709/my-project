@@ -5,29 +5,29 @@
     <title>Good Fast Cheap</title>
 </head>
 <body>
-<div><button onclick="changeGood()" id="btnGood">Good</button></div>
-<div><button onclick="changeFast()" id="btnFast">Fast</button></div>
-<div><button onclick="changeCheap()" id="btnCheap">Cheap</button></div>
+<div><button onclick="changeGood()" style="background-color: red" id="btnGood">Good</button></div>
+<div><button onclick="changeFast()" style="background-color: red" id="btnFast">Fast</button></div>
+<div><button onclick="changeCheap()" style="background-color: red" id="btnCheap">Cheap</button></div>
 <script>
-    let isGood, isFast, isCheap =false;
-    function changeCheap(){
-        isGood = !isGood;
-    if (isGood && isFast) {
-        isCheap = false;
-        }
-    check()
-    }
+    let isGood, isFast, isCheap = false;
     function changeGood(){
+        isGood = !isGood;
+        if (isGood && isCheap) {
+            isFast = false;
+        }
+        check()
+    }
+    function changeCheap(){
         isCheap = !isCheap;
-        if (isFast&& isCheap) {
+        if (isFast && isCheap) {
             isGood = false;
         }
         check()
     }
     function changeFast(){
         isFast = !isFast;
-        if (isGood && isCheap) {
-            isFast = false;
+        if (isGood && isFast) {
+            isCheap = false;
         }
         check()
     }
@@ -36,19 +36,19 @@
         let btn2 = document.getElementById("btnFast");
         let btn3 = document.getElementById("btnCheap");
         if (isGood) {
-            btn1.style.color = "green";
+            btn1.style.backgroundColor = "green";
         } else {
-            btn1.style.color = "red";
+            btn1.style.backgroundColor = "red";
         }
         if (isFast) {
-            btn2.style.color = "green";
+            btn2.style.backgroundColor = "green";
         } else {
-            btn2.style.color = "red";
+            btn2.style.backgroundColor = "red";
         }
         if (isCheap) {
-            btn3.style.color = "green";
+            btn3.style.backgroundColor = "green";
         } else {
-            btn3.style.color = "red";
+            btn3.style.backgroundColor = "red";
         }
     }
 
