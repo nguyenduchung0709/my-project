@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 1</title>
+</head>
+<body>
+<script>
+    // Bài 1: Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+    let numbers = [1, 11, 3, 19, 16, 6, 7, 8, 9, 10];
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] >= 10) {
+            document.write('Số lớn hơn 10 là:' + ' ' + numbers[i] + '<br>');
+        }
+    }
+    // Bài 2:Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+    let max = arr[0];
+    let chiSo;
+    for (let i = 0; i < arr.length; i++) {
+        let arr = [9, 6, 11, 20, 16, 18]
+        if (arr[i] > max) {
+            max = arr[i];
+            chiSo = i;
+        }
+    }
+    document.write('Số lớn nhất là: ' + ' ' + max + ' ' + ' ở vị trí ' + ' ' + chiSo)
+    // Bài 3: Viết chương trình khởi tạo một mảng số nguyên. Hiển thị giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng
+    let numbers = [5, 6, 14, 9, 100, 17, 16]
+    let sum = 0;
+    let trungBinh = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+        trungBinh = sum / numbers.length;
+    }
+    document.write('Tổng của mảng trên bằng :' + ' ' + sum)
+    document.write('<br>')
+    document.write('Trung bình cộng của mảng trên bằng:' + ' ' + trungBinh)
+    // Bài 4: Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng.
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let change = arr.sort(function (a, b) {
+        return b - a;
+    });
+    document.write('Mảng sau khi đảo ngươc là:' + ' ' + change.join(', '))
+    // Bài 5: Viết chương trình đếm số nguyên âm trong một chuỗi.
+    let string = 'qwertyuiopasdfghjklzxcvbnm'
+    let vowel = ['a', 'e', 'i', 'o', 'u']
+
+    let count = 0;
+    for (let i = 0; i < string.length; i++) {
+        if (vowel.includes(string[i])) {
+            count++;
+        }
+    }
+    document.write('Số chữ nguyên âm trong mảng là: ' + ' ' + count)
+    // Bài 6: Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. Nhập hoặc tạo một phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng không.
+    Nếu
+    V
+    thuộc
+    mảng,
+    in
+    "V is in the array".Nếu
+    không,
+    in
+    "V is not in the array".let
+    numbers = [];
+    for (let i = 0; i < 10; i++) {
+        let number = parseInt(prompt('Nhập vào số bất kỳ'));
+        numbers.push(number)
+    }
+    let v = parseInt(prompt('Nhập vào số để kiểm tra xem có nằm trong mảng không !'))
+    if (numbers.includes(v)) {
+        alert('V is in the array')
+    } else {
+        alert('V is not in the array')
+    }
+    // Bài 7:Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. Nhập hoặc tạo một phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không. Nếu V thuộc mảng, xóa V khỏi mảng (dịch các phần tử bên phải V sang vị trí của V và gán 0 cho phần tử cuối cùng của mảng).
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+        let number = parseInt(prompt('Nhập vào số bất kỳ'));
+        numbers.push(number);
+    }
+    let v = parseInt(prompt('Nhập vào số để kiểm tra xem có nằm trong mảng không!'));
+    let index = v.indexOf(numbers);
+    if (index !== -1) {
+        for (let i = index; i < numbers.length; i++) {
+            numbers[i] = numbers[i + 1];
+        }
+        document.write('Đã xóa phần tử V. Mảng sau khi xử lý là:' + numbers.join(", "))
+        numbers[numbers.length - 1] = 0;
+    } else {
+        alert('V is not in the array')
+    }
+    // Bài 8: Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị mảng đã được sắp xếp.
+    let numbers = []
+    for (let i = 0; i < 10; i++) {
+        let number = parseInt(prompt('Nhập vào số đưa nó vào mảng '))
+        numbers.push(number);
+    }
+    numbers.sort(function (a, b) {
+        return b - a;
+    });
+    document.write('Mảng sau khi sắp xếp: ' + numbers.join(', '))
+    // Bài 9: Viết chương trình khởi tạo hoặc nhập vào hai mảng số nguyên gồm 10 phần tử (gọi là mảng a và b).Tạo mảng c gồm 20 phần tử. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.     Hiển thị mảng c.
+    let arr1 = [];
+    for (let i = 0; i < 10; i++) {
+        let number = parseInt(prompt('Nhập số vào mảng a vị trí ' + ' ' + i))
+        arr1.push(number);
+    }
+    let arr2 = [];
+    for (let i = 0; i < 10; i++) {
+        let number2 = parseInt(prompt('Nhập số vào mảng b vị trí ' + ' ' + i))
+        arr2.push(number2);
+    }
+    let c = arr1.concat(arr2);
+    document.write('Mảng c sau khi nối từ mảng a và b là' + ' ' + c.join(', '))
+</script>
+</body>
+</html>
