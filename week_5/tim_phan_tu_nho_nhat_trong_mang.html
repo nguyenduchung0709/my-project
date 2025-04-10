@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tìm phần tử nhỏ nhất trong mảng</title>
+</head>
+<body>
+<script>
+    let arr1 = [3, 5, 1, 8, -3, 7, 8]
+    let arr2 = [8,9,4,4,6,5,-1]
+    let arr3 = []
+    function minArray(arr) {
+        if (arr.length === 0) {
+            return (-1 + 'Không có phần tử trong mảng') ;
+        }
+        let min = arr[0]
+        for (let i = 0; i < arr3.length; i++) {
+            if (arr3[i] < min) {
+                min = arr3[i];
+            } if (min === -1) {
+                return ('Số nhỏ nhất là -1' + ' ' + 'ở vị trí' + ' ' + i)
+            }
+        }
+        return min;
+    }
+    alert(minArray(arr3));
+</script>
+</body>
+</html>
