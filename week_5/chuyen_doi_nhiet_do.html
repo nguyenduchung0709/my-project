@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: green;
+            font-size: 20px;
+            margin-top: 200px;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Chuyển đổi nhiệt độ</h1>
+<p>Nhập một giá trị nhiệt độ F vào để chuyển sang độ C</p>
+<p>Fahrenheit :
+<input type="number" id="value" placeholder="Nhập vào giá trị ">
+<button type="button" onclick="convert()">Chuyển đổi</button>
+</p>
+<p id="result"></p>
+<script>
+    function convert() {
+    let value = document.getElementById('value').value;
+    if (value === "") {
+        document.getElementById('result').innerHTML = ('Vui lòng nhập giá trị !!');
+        return;
+    }
+    document.getElementById('result').innerHTML = ('Độ C bằng :' + ' ' + (value - 32 ) / 1.8);
+    }
+
+</script>
+</body>
+</html>
