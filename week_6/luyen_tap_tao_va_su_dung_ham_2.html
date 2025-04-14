@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng Hàm 2</title>
+</head>
+<body>
+<script>
+    // Bài 1: Tính bình phương: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi và kiểm tra hàm vừa viết.
+    // function square(number) {
+    //     return number * number;
+    // }
+    // let number = parseFloat(prompt('Nhập vào số bất kỳ'))
+    // result = square(number)
+    // alert(`Bình phương của ${number} bằng: ${result}`)
+    // Bài 2: Tính diện tích và chu vi hình tròn: Viết hàm tính diện tích hình tròn. Viết hàm tính chu vi hình tròn.Gọi và kiểm tra các hàm vừa viết.
+    // function calculatePrimeter(radius) {
+    //     return (`Chu vi hình tròn bằng ${2 * Math.PI * radius}`);
+    // }
+    // function calculateAcreage(radius) {
+    //     return (`Diện tích hình tròn bằng ${Math.PI * radius * radius}`);
+    // }
+    // let radius = parseFloat(prompt('Nhập vào bán kính '));
+    // primeter = calculatePrimeter(radius)
+    // acreage = calculateAcreage(radius)
+    // alert(primeter)
+    // alert(acreage)
+    // Bài 3: Tính giai thừa: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi và kiểm tra hàm vừa viết.
+    // function factorial(number) {
+    //     if (number < 0) return ('Nhập lại số lớn hơn 0')
+    //     if (number === 0) return (1)
+    //     return (number * factorial(number - 1))
+    // }
+    // let number = parseFloat(prompt('Nhập vào số bất kỳ'))
+    // result = factorial(number);
+    // alert(result)
+    // Bài 4: Kiểm tra ký tự số: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số hay không. Nếu là ký tự số, hàm trả về true; ngược lại trả về false.
+    function checkNumber(char) {
+        return /^[0-9]+$/.test(char);
+    }
+    let char = prompt('Nhập vào chuỗi hoặc số')
+    check = checkNumber(char)
+    console.log(check)
+    // Bài 5: Tìm số nguyên nhỏ nhất: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    
+
+</script>
+</body>
+</html>

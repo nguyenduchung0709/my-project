@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Lớp Date</title>
+</head>
+<body>
+<script>
+  let date = function(day, month, year) {
+    this.day = day;
+    this.month = month;
+    this.year = year;
+    this.getDay = function () {
+      return this.day;
+    }
+    this.getMonth = function () {
+      return this.month;
+    }
+    this.getYear = function () {
+      return this.year;
+    }
+    this.setDay = function (day) {
+      this.day = day;
+    }
+    this.setMonth = function (month) {
+      this.month = month;
+    }
+    this.setYear = function (year) {
+      this.year = year;
+    }
+    this.setDate = function (day, month, year) {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+    }
+    this.toString = function () {
+      return `${this.day < 10 ? '0' + this.day : this.day}/${this.month < 10 ? '0' + this.month : this.month}/${this.year}`;
+    }
+  }
+  let myDate = new date(14 , 4, 2025)
+  // Thay đổi ngày tháng
+  myDate.setDay(17)
+  myDate.setMonth(6)
+  myDate.setYear(2025)
+  let day = myDate.getDay()
+  let month = myDate.getMonth()
+  let year = myDate.getYear()
+  alert(`${day}/${month}/${year}`)
+  // Gọi phương thức setDate() và toString()
+  myDate.setDate(16, 4, 2025)
+  alert(myDate.toString())
+</script>
+</body>
+</html>
