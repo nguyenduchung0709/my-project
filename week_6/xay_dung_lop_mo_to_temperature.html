@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    let Temperature = function(celsius) {
+        if (celsius < -273) {
+            this.error = 'nhiệt độ không thể nhỏ hơn -273'
+        } else {
+
+        this.celsius = celsius;
+            this.fahrenheit = function() {
+                return celsius * 9 / 5 + 32;
+            }
+            this.kelvin = function() {
+                return celsius + 273.15
+            }
+        }
+    }
+    let myTemperature = new Temperature(-274);
+    if (myTemperature.error) {
+        document.write(`Lỗi  ${myTemperature.error}`)
+    } else {
+    document.write(`Độ F: ${myTemperature.fahrenheit()}`);
+    document.write('<br>')
+    document.write(`Độ K: ${myTemperature.kelvin()}`);
+    }
+</script>
+</body>
+</html>
