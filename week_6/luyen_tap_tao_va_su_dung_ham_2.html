@@ -7,33 +7,33 @@
 <body>
 <script>
     // Bài 1: Tính bình phương: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi và kiểm tra hàm vừa viết.
-    // function square(number) {
-    //     return number * number;
-    // }
-    // let number = parseFloat(prompt('Nhập vào số bất kỳ'))
-    // result = square(number)
-    // alert(`Bình phương của ${number} bằng: ${result}`)
+    function square(number) {
+        return number * number;
+    }
+    let number = parseFloat(prompt('Nhập vào số bất kỳ'))
+    result = square(number)
+    alert(`Bình phương của ${number} bằng: ${result}`)
     // Bài 2: Tính diện tích và chu vi hình tròn: Viết hàm tính diện tích hình tròn. Viết hàm tính chu vi hình tròn.Gọi và kiểm tra các hàm vừa viết.
-    // function calculatePrimeter(radius) {
-    //     return (`Chu vi hình tròn bằng ${2 * Math.PI * radius}`);
-    // }
-    // function calculateAcreage(radius) {
-    //     return (`Diện tích hình tròn bằng ${Math.PI * radius * radius}`);
-    // }
-    // let radius = parseFloat(prompt('Nhập vào bán kính '));
-    // primeter = calculatePrimeter(radius)
-    // acreage = calculateAcreage(radius)
-    // alert(primeter)
-    // alert(acreage)
+    function calculatePrimeter(radius) {
+        return (`Chu vi hình tròn bằng ${2 * Math.PI * radius}`);
+    }
+    function calculateAcreage(radius) {
+        return (`Diện tích hình tròn bằng ${Math.PI * radius * radius}`);
+    }
+    let radius = parseFloat(prompt('Nhập vào bán kính '));
+    primeter = calculatePrimeter(radius)
+    acreage = calculateAcreage(radius)
+    alert(primeter)
+    alert(acreage)
     // Bài 3: Tính giai thừa: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi và kiểm tra hàm vừa viết.
-    // function factorial(number) {
-    //     if (number < 0) return ('Nhập lại số lớn hơn 0')
-    //     if (number === 0) return (1)
-    //     return (number * factorial(number - 1))
-    // }
-    // let number = parseFloat(prompt('Nhập vào số bất kỳ'))
-    // result = factorial(number);
-    // alert(result)
+    function factorial(number) {
+        if (number < 0) return ('Nhập lại số lớn hơn 0')
+        if (number === 0) return (1)
+        return (number * factorial(number - 1))
+    }
+    let number = parseFloat(prompt('Nhập vào số bất kỳ'))
+    result = factorial(number);
+    alert(result)
     // Bài 4: Kiểm tra ký tự số: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số hay không. Nếu là ký tự số, hàm trả về true; ngược lại trả về false.
     function checkNumber(char) {
         return /^[0-9]+$/.test(char);
@@ -42,8 +42,64 @@
     check = checkNumber(char)
     console.log(check)
     // Bài 5: Tìm số nguyên nhỏ nhất: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
-    
+    function min(a, b, c) {
+        return Math.min(a, b, c)
+    }
+    let a = +prompt('Enter a number')
+    let b = +prompt('Enter a number')
+    let c = +prompt('Enter a number')
 
+    let result = min(a, b, c)
+    console.log(`Số nhỏ nhất trong 3 số là : ${result}`)
+    // Bài 6: Kiểm tra số nguyên dương: Viết hàm nhận vào một số, kiểm tra xem số đó có phải là số nguyên dương không.Nếu là nguyên dương, trả về true; ngược lại trả về false.
+    function positiveInterge(num) {
+        if (num < 0) return (`${num} không phải số nguyên dương`);
+        if (num > 0) return (`${num} là số nguyên dương `);
+    }
+    let num = +prompt('Nhập vào số bất kỳ')
+    let result = positiveInterge(num)
+    alert(result)
+    // Bài 7: Đổi chỗ hai số nguyên: Viết hàm truyền vào 2 số nguyên bất kỳ và thực hiện đổi chỗ hai số đó.
+    let a = +prompt('Nhập vào số thứ nhất')
+    let b = +prompt('Nhập vào số thứ hai')
+    function swap(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+    }
+    [a, b] = swap(a, b);
+    alert(`Sau khi đổi chỗ: a = ${a}, b = ${b}`);
+    // Bài 8: Viết hàm nhận vào một mảng số nguyên bất kỳ và đảo ngược mảng đó
+    function daoNguocMang() {
+        return arr.reverse();
+    }
+    let arr = [];
+    for (let i = 0; i < 9; i++) { // Giới hạn mảng có 10 phần tử
+        let number = +prompt(`Nhập vào số thứ ${i + 1}`)
+        arr.push(number);
+    }
+    document.write(`Mảng đầu tiên: ${arr}`)
+    document.write('<br>')
+    let result = daoNguocMang();
+    document.write(`Mảng thứ nhất đã bị đảo ngược: ${result}`);
+    // Bài 9: Kiểm tra ký tự trong mảng:Viết hàm nhận vào một mảng ký tự và một ký tự bất kỳ.Kiểm tra xem ký tự đó có nằm trong mảng hay không.Nếu có, trả về số lần xuất hiện; nếu không, trả về -1.
+    function demKyTu(mang, kyTu) {
+        let dem = 0;
+
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] === kyTu) {
+                dem++;
+            }
+        }
+
+        return dem > 0 ? dem : -1;
+    }
+    let mangKyTu = ['a', 'b', 'c', 'a', 'd', 'a'];
+
+    console.log(demKyTu(mangKyTu, 'a')); // Output: 3
+    console.log(demKyTu(mangKyTu, 'b')); // Output: 1
+    console.log(demKyTu(mangKyTu, 'x')); // Output: -1
 </script>
 </body>
 </html>

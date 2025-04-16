@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm </title>
+    <style>
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+        input {
+            padding: 6px 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .heading{
+            dísplay: flex;
+            justify-content: space-between;
+        }
+        td {
+            padding: 6px 12px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<h2>Add New Product</h2>
+<form onsubmit= "createProduct(event)">
+    <input type="text" name="productName" id="productName">
+    <button type="submit">Add</button>
+</form>
+<h2>Display All Product</h2>
+<div>
+    <strong>Product Name</strong>
+    <strong id="productCount">SL </strong>
+</div>
+<table>
+    <tbody id="productList">
+    <tr>
+        <td>Sony Experia</td>
+        <td><button type="button">Edit</button></td>
+        <td><button type="button" id="btnAdd">Delete</button></td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    const products =[
+        'Apple',
+        'SamSung Galaxy S23',
+        'Google Pixel 6',
+        'One Plus 11',
+        'Xiaomi 13 Pro',
+        'Sony Xperia 1IV',
+    ];
+    let productIndex = -1;
+    const tableBody = document.getElementById('productList');
+    tableBody.innerHTML = '';
+
+    function disPlayProduct() {
+        let row = '';
+        for (let i = 0; i < products.length; i++) {
+            row += '<tr>';
+            row += '<td>' + products[i] + '</td>';
+            row += '<td><button type="button" onclick="handleEdit(${i})">Edit</button></td>';
+            row += `<td><button type="button" onclick="handleDelete(${i})">Delete</button></td>`;
+            row += '</tr>'
+        }
+        tableBody.innerHTML = row;
+    }
+    function createProduct(event){
+        event.preventDefault();
+        let productName = document.getElementById('productName').value;
+        if (productIndex === -1) {
+            product[productIndex] = productName;
+            productIndex = -1;
+            document.getElementById('productName').value = '';
+        }
+        products.push(productName);
+        disPlayProduct();
+    }
+
+    function handleDelete(index){
+        if (comfirm(`Bạn có muốn xóa ${product[index] không}`))
+        products.splice(index, 1);
+        disPlayProduct()
+    }
+    disPlayProduct();
+
+    function handleEdit(index){
+        productIndex = index;
+        let productName = products[index];
+        document.getElementById('productName').value = productName;
+        document.getElementById('btnAdd').innerHTML = productName;
+
+    }
+
+</script>
+</body>
+</html>
