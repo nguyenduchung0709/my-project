@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra chuỗi đối xứng </title>
+</head>
+<body>
+<script>
+  let input = "aha"
+  function palindrome() {
+  let reversed = input.split('').reverse().join('')
+    if (input === reversed) {
+      alert('Đây là chuỗi đối xứng')
+    } else {
+      alert('Đây không phải chuỗi đối xứng')
+    }
+  }
+  palindrome()
+</script>
+</body>
+</html>
