@@ -19,12 +19,23 @@
             border-collapse: collapse;
         }
         .heading{
-            dísplay: flex;
+            display: flex;
             justify-content: space-between;
+            padding : 6px;
+        }
+        .heading strong:nth-child(2) {
+            color: red;
+        }
+        td:nth-child(1) {
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: lightgray;
         }
         td {
             padding: 6px 12px;
             text-align: center;
+
         }
 
     </style>
@@ -36,9 +47,9 @@
     <button type="submit">Add</button>
 </form>
 <h2>Display All Product</h2>
-<div>
+<div class= 'heading'>
     <strong>Product Name</strong>
-    <strong id="productCount">SL </strong>
+    <strong id="productCount">SL Product</strong>
 </div>
 <table>
     <tbody id="productList">
@@ -67,7 +78,7 @@
         for (let i = 0; i < products.length; i++) {
             row += '<tr>';
             row += '<td>' + products[i] + '</td>';
-            row += '<td><button type="button" onclick="handleEdit(${i})">Edit</button></td>';
+            row += '<td><button type="button" onclick="handleEdit(`${i}`)">Edit</button></td>';
             row += `<td><button type="button" onclick="handleDelete(${i})">Delete</button></td>`;
             row += '</tr>'
         }
@@ -77,7 +88,7 @@
         event.preventDefault();
         let productName = document.getElementById('productName').value;
         if (productIndex === -1) {
-            product[productIndex] = productName;
+            products[productIndex] = productName;
             productIndex = -1;
             document.getElementById('productName').value = '';
         }
@@ -86,7 +97,7 @@
     }
 
     function handleDelete(index){
-        if (comfirm(`Bạn có muốn xóa ${product[index] không}`))
+        if (confirm(`Bạn có muốn xóa ${products[index]} không`))
         products.splice(index, 1);
         disPlayProduct()
     }
