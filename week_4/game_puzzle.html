@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Puzzle</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<img onclick="changeRowPic1()"  src="funny-cat1_part1x1.jpg" id="firstRow" height="130" width="800" alt="cat1x1"/>
+<img onclick="changeRowPic2()" id="secondRow" src="monkey_part2x1.jpg" height="160" width="800" alt="monkey2x1"/>
+<img onclick="changeRowPic3()" id="thirdRow" src="panda_swap_part3x1.jpg" height="160" width="800" alt="panda3x1"/>
+<img onclick="changeRowPic4()" id="fourthRow" src="funny-cat1_part4x1.jpg" height="160" width="800" alt="cat4x1"/>
+<img onclick="changeRowPic5()" id="fifthRow" src="funny-cat1_part4x1.jpg" height="160" width="800" alt="cat4x1"/>
+
+<script>
+    let rowPic1 = [
+        'funny-cat1_part1x1.jpg',
+        'monkey_part1x1.jpg',
+        'panda_swap_part1x1.jpg'
+    ]
+    let index = Math.floor(Math.random() * rowPic1.length);
+    document.getElementById('firstRow').src = rowPic1[index];
+    function changeRowPic1() {
+        index = (index - 1 + rowPic1.length) % rowPic1.length;
+        document.getElementById('firstRow').src = rowPic1[index];
+        checkWin()
+    }
+
+    let rowPic2 = [
+        'funny-cat1_part2x1.jpg',
+        'monkey_part2x1.jpg',
+        'panda_swap_part2x1.jpg'
+    ]
+    let index2 = Math.floor(Math.random() * rowPic2.length);
+    document.getElementById('secondRow').src = rowPic2[index2];
+    function changeRowPic2() {
+        index2 = (index2 - 1 + rowPic2.length) % rowPic2.length;
+        document.getElementById('secondRow').src = rowPic2[index2];
+        checkWin()
+    }
+    let rowPic3 = [
+        'funny-cat1_part3x1.jpg',
+        'monkey_part3x1.jpg',
+        'panda_swap_part3x1.jpg'
+    ]
+    let index3 = Math.floor(Math.random() * rowPic3.length);
+    document.getElementById('thirdRow').src = rowPic3[index3];
+
+    function changeRowPic3() {
+        index3 = (index3 - 1 + rowPic3.length) % rowPic3.length;
+        document.getElementById('thirdRow').src = rowPic3[index3];
+        checkWin()
+    }
+
+    let rowPic4 = [
+        'funny-cat1_part4x1.jpg',
+        'monkey_part4x1.jpg',
+        'panda_swap_part4x1.jpg',
+    ]
+    let index4 = Math.floor(Math.random() * rowPic4.length);
+    document.getElementById('fourthRow').src = rowPic4[index4];
+    function changeRowPic4() {
+        index4 = (index4 - 1 + rowPic4.length) % rowPic4.length;
+        document.getElementById('fourthRow').src = rowPic4[index4];
+        checkWin()
+    }
+
+    let rowPic5 = [
+        'funny-cat1_part5x1.jpg',
+        'monkey_part5x1.jpg',
+        'panda_swap_part5x1.jpg',
+    ]
+    let index5 = Math.floor(Math.random() * rowPic5.length);
+    document.getElementById('fifthRow').src = rowPic5[index5];
+    function changeRowPic5() {
+        index5 = (index5 - 1 + rowPic5.length) % rowPic5.length;
+        document.getElementById('fifthRow').src = rowPic5[index5];
+        checkWin()
+    }
+
+    function checkWin() {
+        if (index === index2 && index2 === index3 && index3 === index4 && index4 === index5) {
+            alert('You Win !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        }
+    }
+
+
+</script>
+</body>
+</html>
