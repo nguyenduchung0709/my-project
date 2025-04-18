@@ -7,55 +7,55 @@
 <body>
 <script>
   // Bài 1: Viết chương trình khởi tạo mảng 2 chiều với một bộ phần tử có sẵn, sau đó in ra các phần tử trong mảng.
-  // let a = [
-  //   [1, 2, 1, 24],
-  //   [8, 11, 9, 4],
-  //   [7, 0, 7, 27],
-  //   [7, 4, 28, 14],
-  //   [3, 10, 26, 7]
-  // ];
-  // for (let i in a) {
-  //   console.log(`row ${i}  `)
-  //   for (let j in a[i]) {
-  //     console.log(" " + a[i][j]  )
-  //   }
-  // }
+  let a = [
+    [1, 2, 1, 24],
+    [8, 11, 9, 4],
+    [7, 0, 7, 27],
+    [7, 4, 28, 14],
+    [3, 10, 26, 7]
+  ];
+  for (let i in a) {
+    console.log(`row ${i}  `)
+    for (let j in a[i]) {
+      console.log(" " + a[i][j]  )
+    }
+  }
   // Bài 2: Viết chương trình in các ký tự trong một mảng theo thứ tự đảo ngược.
-  // let arr = [ 'c', 's', 'c', '2', '6', '1' ];
-  // let strings = arr.reverse().join('')
-  // console.log(strings)
+  let arr = [ 'c', 's', 'c', '2', '6', '1' ];
+  let strings = arr.reverse().join('')
+  console.log(strings)
   // Bài 3: Viết chương trình khai báo một mảng ký tự và kích thước của mảng.
-  // let arr = [];
-  // let count = 0;
-  // let number = ['1','2', '3', '4', '5', '6', '7', '8', '9', '0']
-  // for (let i = 0; i < 10; i++) {
-  //   char = prompt('Nhập vào ký tự bất kỳ')
-  //   arr.push(char)
-  // }
-  // for (let i = 0; i < arr.length; i++) {
-  //   if (number.includes(arr[i])) {
-  //     count++;
-  //   }
-  // }
-  // console.log(`Mảng đã nhập :${arr}`)
-  // console.log(`Số ký tự số ${count}`)
+  let arr = [];
+  let count = 0;
+  let number = ['1','2', '3', '4', '5', '6', '7', '8', '9', '0']
+  for (let i = 0; i < 10; i++) {
+    char = prompt('Nhập vào ký tự bất kỳ')
+    arr.push(char)
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (number.includes(arr[i])) {
+      count++;
+    }
+  }
+  console.log(`Mảng đã nhập :${arr}`)
+  console.log(`Số ký tự số ${count}`)
   // Bài 4: Viết chương trình đếm số từ trong một chuỗi.
-  // let input = 'sbdclscsdcsdcndkcnksjc'
-  // let change = input.split('')
-  // let count = 0
-  // for (let i = 1; i < change.length; i++) {
-  //     count++
-  // }
-  // console.log(count)
+  let input = 'sbdclscsdcsdcndkcnksjc'
+  let change = input.split('')
+  let count = 0
+  for (let i = 1; i < change.length; i++) {
+      count++
+  }
+  console.log(count)
   // Bài 5: Viết chương trình nhập vào 2 chuỗi, kiểm tra xem hai chuỗi có giống nhau không.
-  // let input = prompt('Nhập vào chuỗi bất kỳ')
-  // let input2 = prompt('Nhập vào chuỗi bất kỳ thứ hai')
-  // function test() {
-  //     if (input === input2) return alert('Hai chuỗi giống nhau')
-  //     if (input !== input2) return alert('Hai chuỗi không giống nhau')
-  //
-  // }
-  // test()
+  let input = prompt('Nhập vào chuỗi bất kỳ')
+  let input2 = prompt('Nhập vào chuỗi bất kỳ thứ hai')
+  function test() {
+      if (input === input2) return alert('Hai chuỗi giống nhau')
+      if (input !== input2) return alert('Hai chuỗi không giống nhau')
+
+  }
+  test()
   // Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự '-' trong mảng và thay thế chúng bằng ký tự '_'.
   let arr = [];
   for (let i = 0; i < 4; i++) {
