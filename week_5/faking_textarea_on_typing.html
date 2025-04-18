@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+  <style>
+    h1 {
+      margin-left: 120px
+    }
+    body {
+      margin-left: 60px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+<h1>Typing Slowly</h1>
+<textarea onkeydown="fakeTyping(event)" id="funny" cols="60" rows="20"></textarea>
+<script>
+
+    let message = 'Tôi là một thằng ngu!!'
+    let index = 0;
+    function fakeTyping(event) {
+      event.preventDefault();
+      let funny = document.getElementById('funny');
+      if (index < message.length) {
+        funny.value += message.charAt(index);
+        index++;
+      }
+    }
+</script>
+</body>
+</html>
