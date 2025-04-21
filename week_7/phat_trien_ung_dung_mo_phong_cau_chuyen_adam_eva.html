@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10
+
+    }
+        decrease() {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+        }
+        isEmpty() {
+            return this.weight === 0;
+        }
+        getWeight() {
+            return this.weight;
+        }
+    }
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = ''
+            this.gender = true
+            this.weight = 0
+        }
+        isMale() {
+            return this.gender;
+        }
+        setGender(gender) {
+            this.gender = gender;
+        }
+        checkApple(apple) {
+            return !apple.isEmpty();
+        }
+        eat(apple) {
+            if (this.checkApple(apple)) {
+                apple.decrease();
+                this.weight++;
+                console.log(`${this.name} vừa ăn một miếng táo.`);
+            } else {
+                console.log(`${this.name} không thể ăn thêm vì táo đã hết.`);
+            }
+        }
+        say(message) {
+            console.log(`${this.name} nói ${message}`);
+        }
+        getName() {
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+    }
+    const apple = new Apple();
+    console.log(`Cân nặng quả táo bằng ${apple.getWeight()}`)
+
+    const adam = new Human();
+    adam.setName('Adam')
+    adam.setGender(true)
+    adam.setWeight(60)
+
+    const eva = new Human();
+    eva.setName('Eva')
+    eva.setGender(false)
+    eva.setWeight(50)
+
+    let turn = 0;
+
+    console.log(`Bắt đầu ăn táo `)
+    while(!apple.isEmpty()) {
+        if (turn === 0) {
+        adam.eat(apple);
+        console.log(`${adam.getName()} - Cân nặng: ${adam.getWeight()}`)
+        } else {
+            eva.eat(apple);
+            console.log(`${eva.getName()} - Cân nặng: ${eva.getWeight()}`)
+        }
+        console.log(`Khồi lượng táo còn lại : ${apple.getWeight()}`)
+        console.log('------------')
+        turn = 1- turn
+    }
+    console.log(`Kết thúc, táo đã ăn hết `)
+</script>
+</body>
+</html>
