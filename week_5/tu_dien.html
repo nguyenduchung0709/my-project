@@ -5,9 +5,27 @@
     <title>Từ điển</title>
 </head>
 <body>
-<form action="" type></form>
+<label>Nhập tiếng Anh</label>
+<input type="text" id="english" >
+<button id="translate">Dịch</button>
+<p id="result"></p>
 <script>
+let eng = [
+    'Apple', 'Orange', 'Paper', 'Sugar', 'Table', 'Chair', 'Sunglasses', 'Sun', 'Moon'
+]
+let vn = [
+    'Táo', 'Cam', 'Giấy', 'Đường', 'Bàn', 'Ghế', 'Kính mắt', 'Mặt trời', 'Mặt trăng'
+]
+document.getElementById('translate').addEventListener('click', function() {
+let english = document.getElementById('english').value.trim();
 
+    let index = eng.findIndex(item => (item.toLowerCase() === english.toLowerCase()));
+    if (index >= 0) {
+        document.getElementById('result').innerHTML = vn[index];
+    } else {
+        document.getElementById('result').innerHTML = 'Không tìm thấy từ';
+    }
+});
 </script>
 </body>
 </html>
