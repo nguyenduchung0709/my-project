@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đơn giản - Di chuyển đối tượng</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    class Jake {
+        constructor(img, top, left, size, speed) {
+            this.img = img;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+            this.speed = speed;
+            this.move = 'right';
+        }
+        getHeroELement() {
+            return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.img +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+        moveLeft() {
+            this.left -= this.speed;
+        }
+        moveRight() {
+            this.left += this.speed;
+        }
+        moveUp() {
+            this.top -= this.speed;
+        }
+        moveDown() {
+            this.top += this.speed;
+        }
+
+
+    }
+    let jake = new Jake('jake.png', 20, 30, 200, 50);
+
+    function start() {
+    if (jake.move === 'right') {
+        if (jake.left < window.innerWidth - jake.size) {
+            jake.moveRight();
+        } else {
+            jake.move = 'down';
+        }
+    }   else if (jake.move === 'down') {
+        if (jake.top < window.innerHeight - jake.size) {
+            jake.moveDown();
+        } else {
+            jake.move = 'left';
+        }
+    } else if (jake.move === 'left') {
+            if (jake.left > 0) {
+                jake.moveLeft();
+            } else {
+                jake.move = 'up';
+            }
+    } else if (jake.move === 'up') {
+        if (jake.top > 0) {
+            jake.moveUp();
+        } else {
+            jake.move = 'right'
+
+        }
+    }
+
+
+
+        document.getElementById('game').innerHTML = jake.getHeroELement()
+        setTimeout(start, 100);
+    }
+    start();
+</script>
+</body>
+</html>
