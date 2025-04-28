@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quản lý học viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<img src="hocvienquanlygiaoduc.PNG" height="160" width="1841" alt="hocvienquanly">
+
+<div>
+    <h1>QUẢN LÝ HỌC VIÊN</h1>
+</div>
+<div class="container">
+    <div class="form-section">
+        <h2>Thông tin sinh viên</h2>
+        <label >ID</label>
+        <input type="text" id="uid" placeholder="Nhập ID">
+
+        <label for="name">Họ và tên</label>
+        <input type="text" id="name" placeholder="Nhập họ tên">
+
+        <label >Ngày sinh</label>
+        <input type="text" id="dateborn" placeholder="dd/mm/yyyy">
+
+        <label >Giới tính</label>
+        <input type="text" id="gender" placeholder="Nam/Nữ">
+
+        <label>Lớp</label>
+        <input type="text" id="grade" placeholder="Nhập lớp">
+
+        <label >Ảnh (URL)</label>
+        <input type="text" id="img" placeholder="Nhập link ảnh">
+        <div class="buttons">
+            <button class="add-btn" onclick="add()">Thêm học viên</button>
+            <button class="save-btn" onclick="save()">Lưu thông tin</button>
+        </div>
+    </div>
+    <div class="list-students">
+        <table>
+            <tr>
+                <th style="font-size: 40px; color: #007ACC;" colspan="7">Danh sách sinh viên</th>
+            </tr>
+            <tr class="table-header">
+                <th>ID</th>
+                <th>Họ và tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Lớp</th>
+                <th>Ảnh</th>
+                <th>Tùy chọn</th>
+            </tr>
+
+            <tbody id="table_body"></tbody>
+            <tr>
+                <td colspan="7"><button class="reset-btn" onclick="reset()">Khôi phục dữ liệu</button></td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+<script src="student.js"></script>
+<script src="students_list.js"></script>
+<script src="showlist.js"></script>
+<link rel="stylesheet" href="style.css">
+</body>
+</html>
