@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIC TAC TOE</title>
+</head>
+<body>
+<h2>Bàn cờ Caro</h2>
+<div id="board_game"></div>
+<h3 id="result"></h3>
+<script>
+    let board = document.getElementById('board_game');
+    let firstPlayer = 'X'
+    let size = 3
+    let cells = [];
+    for (let i = 0; i < size; i++) {
+        let rowDiv = document.createElement('div');
+        cells[i] = [];
+
+        for (let j = 0; j < size; j++) {
+            let btn = document.createElement('button');
+            btn.textContent = "";
+            btn.style.width = "60px";
+            btn.style.height = "60px";
+            btn.style.fontSize = "24px";
+            btn.style.margin = "1px";
+            btn.style.cursor = "pointer";
+            btn.onclick = function () {
+                if (btn.textContent === '') {
+                    btn.textContent = firstPlayer;
+                    if (checkWin(firstPlayer)) {
+                        result.textContent = `Người chơi ${firstPlayer} thắng!`;
+                        disableBoard();
+                    } else {
+                        firstPlayer = firstPlayer === 'X' ? 'O' : 'X';
+                    }
+                }
+            }
+            rowDiv.appendChild(btn);
+            cells[i][j] = btn
+        }
+        board.appendChild(rowDiv);
+    }
+    function checkWin(player) {
+        // Kiểm tra hàng
+        for (let i = 0; i < size; i++) {
+            if (cells[i][0].textContent === player &&
+                cells[i][1].textContent === player &&
+                cells[i][2].textContent === player) {
+                return true;
+            }
+        }
+
+        // Kiểm tra cột
+        for (let j = 0; j < size; j++) {
+            if (cells[0][j].textContent === player &&
+                cells[1][j].textContent === player &&
+                cells[2][j].textContent === player) {
+                return true;
+            }
+        }
+
+        // Kiểm tra đường chéo
+        if (
+            cells[0][0].textContent === player &&
+            cells[1][1].textContent === player &&
+            cells[2][2].textContent === player
+        ) {
+            return true;
+        }
+
+        if (cells[0][2].textContent === player &&
+            cells[1][1].textContent === player &&
+            cells[2][0].textContent === player
+        ) {
+            return true;
+        }
+
+        return false;
+    }
+    function disableBoard() {
+        for (let i = 0; i < size; i++) {
+            for (let j = 0; j < size; j++) {
+                cells[i][j].disabled = true;
+            }
+        }
+    }
+</script>
+</body>
+</html>
