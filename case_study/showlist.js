@@ -36,6 +36,11 @@ function add() {
         alert('Vui lòng nhập đầy đủ thông tin ')
         return;
     }
+    let idExists = students.some(student => student.id === id);
+    if (idExists) {
+        alert('ID đã tồn tại. Vui lòng nhập ID khác!');
+        return;
+    }
 
     let newStudent = new Student(id, name, dateborn, gender, grade , img );
     students.push(newStudent);
