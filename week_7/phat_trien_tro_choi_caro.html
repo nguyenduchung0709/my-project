@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phát triển trò chơi Caro</title>
+  <style>
+    button {
+      border: 1px solid #ccc;
+      outline: none;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: white;
+    }
+
+    button:active {
+      transform: none; /* Ngăn hiệu ứng nhấn */
+    }
+
+    #board_game > div {
+      display: flex; /* Giữ hàng không bị nhảy dòng */
+    }
+  </style>
+</head>
+<body>
+<h2>Bàn cờ Caro</h2>
+<div id="board_game"></div>
+<script>
+  let board = document.getElementById('board_game');
+  let firstPlayer = 'X'
+  let size = 20
+  let cells = [];
+  for (let i = 0; i < size; i++) {
+    let rowDiv = document.createElement('div');
+    cells[i] = [];
+
+    for (let j = 0; j < size; j++) {
+      let btn = document.createElement('button');
+      btn.textContent = "";
+      btn.style.width = "60px";
+      btn.style.height = "60px";
+      btn.style.fontSize = "24px";
+      btn.style.margin = "1px";
+      btn.style.cursor = "pointer";
+      btn.onclick = function () {
+        if (btn.textContent === '') {
+          btn.textContent = firstPlayer;
+          if (checkWin(firstPlayer)) {
+            alert(`Người chơi ${firstPlayer} thắng!`)
+            disableBoard();
+          } else {
+            firstPlayer = firstPlayer === 'X' ? 'O' : 'X';
+          }
+        }
+      }
+      rowDiv.appendChild(btn);
+      cells[i][j] = btn
+    }
+    board.appendChild(rowDiv);
+  }
+  function checkWin(player) {
+    const directions = [
+      [0, 1],   // hàng ngang
+      [1, 0],   // hàng dọc
+      [1, 1],   // chéo chính
+      [1, -1]   // chéo phụ
+    ];
+
+    for (let i = 0; i < size; i++) {
+      for (let j = 0; j < size; j++) {
+        if (cells[i][j].textContent === player) {
+          for (let [dx, dy] of directions) {
+            let count = 1;
+
+            let x = i + dx;
+            let y = j + dy;
+
+            while (
+                    x >= 0 && x < size &&
+                    y >= 0 && y < size &&
+                    cells[x][y].textContent === player
+                    ) {
+              count++;
+              if (count === 5) {
+                return true;
+              }
+              x += dx;
+              y += dy;
+            }
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  function disableBoard() {
+    for (let i = 0; i < size; i++) {
+      for (let j = 0; j < size; j++) {
+        cells[i][j].disabled = true;
+      }
+    }
+  }
+</script>
+</body>
+</html>
