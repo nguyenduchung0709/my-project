@@ -2,9 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Phát triển game Lái xe</title>
+    <title>Game Lái Xe Đơn Giản</title>
 </head>
 <body>
-<canvas style="border: 1px solid black; width: 800px"><img src="car.png" alt=""></canvas>
+<h1>Điểm: <span id="score">0</span></h1>
+<div id="game" style="width: 500px; height: 500px; border: 2px solid black; position: relative; overflow: hidden;"></div>
+
+<script>
+    const game = document.getElementById("game");
+    const scoreDisplay = document.getElementById("score");
+
+    const car = document.createElement("div");
+    car.style.width = "30px";
+    car.style.height = "30px";
+    car.style.background = "blue";
+    car.style.position = "absolute";
+    car.style.left = "250px";
+    car.style.top = "250px";
+    game.appendChild(car);
+
+    let direction = "right";
+    let speed = 3;
+    let score = 0;
+    let isGameOver = false;
+
+
+    function createItem(type) {
+        const item = document.createElement("div");
+        item.className = type;
+        item.style.width = "20px";
+        item.style.height = "20px";
+        item.style.position = "absolute";
+        item.style.background = type === "obstacle" ? "red" : "green";
+        item.style.left = Math.floor(Math.random() * 480) + "px";
+        item.style.top = Math.floor(Math.random() * 480) + "px";
+        game.appendChild(item);
+    }
+
+
+    for (let i = 0; i < 5; i++) {
+        createItem("obstacle");
+        createItem("reward");
+    }
+
+
+    function moveCar() {
+        if (isGameOver) return;
+        let left = parseInt(car.style.left);
+        let top = parseInt(car.style.top);
+
+        if (direction === "right") left += speed;
+        if (direction === "left") left -= speed;
+        if (direction === "up") top -= speed;
+        if (direction === "down") top += speed;
+
+
+        left = Math.max(0, Math.min(470, left));
+        top = Math.max(0, Math.min(470, top));
+
+        car.style.left = left + "px";
+        car.style.top = top + "px";
+
+        checkCollision();
+        requestAnimationFrame(moveCar);
+    }
+
+
+    function checkCollision() {
+        const carRect = car.getBoundingClientRect();
+
+        document.querySelectorAll(".obstacle").forEach(obs => {
+            const obsRect = obs.getBoundingClientRect();
+            if (isOverlap(carRect, obsRect)) {
+                alert("💥 Game Over!");
+                isGameOver = true;
+            }
+        });
+
+        document.querySelectorAll(".reward").forEach(reward => {
+            const rewardRect = reward.getBoundingClientRect();
+            if (isOverlap(carRect, rewardRect)) {
+                reward.remove();
+                score += 10;
+                scoreDisplay.innerText = score;
+            }
+        });
+    }
+
+
+    function isOverlap(a, b) {
+        return !(
+            a.right < b.left ||
+            a.left > b.right ||
+            a.bottom < b.top ||
+            a.top > b.bottom
+        );
+    }
+
+        document.addEventListener("keydown", e => {
+        if (e.key === "ArrowUp") direction = "up";
+        if (e.key === "ArrowDown") direction = "down";
+        if (e.key === "ArrowLeft") direction = "left";
+        if (e.key === "ArrowRight") direction = "right";
+        if (e.ctrlKey) speed = 8;
+    });
+
+    document.addEventListener("keyup", e => {
+        if (!e.ctrlKey) speed = 2;
+    });
+
+
+    moveCar();
+</script>
 </body>
 </html>
