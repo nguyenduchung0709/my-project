@@ -10,6 +10,47 @@
     constructor(status) {
       this.status = status;
     }
+    turnOn() {
+        this.status = true;
+        console.log(`Bóng đèn đang bật `)
+    }
+    turnOff() {
+        this.status = false;
+        console.log(`Bòng đèn đang tắt`)
+    }
+  }
+  class SwitchButton {
+      constructor() {
+          this.status = false;
+          this.lamp = null;
+      }
+      connectToLamp(lamp) {
+          this.lamp = lamp;
+      }
+      switchOn () {
+          if (this.lamp) {
+              this.status = true
+              this.lamp.turnOn();
+          }
+      }
+      switchOff () {
+          if (this.lamp) {
+              this.status = false;
+              this.lamp.turnOff();
+          }
+      }
+  }
+  let lamp = new ElectricLamp();
+  let switchButton = new SwitchButton();
+  switchButton.connectToLamp(lamp);
+
+  for (let i = 1; i <= 10; i++) {
+      console.log(`Lần thứ ${i}`)
+      if (i % 2 === 0) {
+          switchButton.switchOn();
+      } else {
+          switchButton.switchOff();
+      }
   }
 </script>
 </body>
